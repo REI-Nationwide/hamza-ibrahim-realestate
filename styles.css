@@ -1,0 +1,221 @@
+/* Hamza Ibrahim — real estate contact site */
+:root {
+  --ink: #1c1916;
+  --muted: #5b554c;
+  --paper: #f5f1ea;
+  --card: #fffcf7;
+  --line: #e2dbd0;
+  --accent: #3e4f42;
+  --accent-hover: #2d3b31;
+  --link: #1f4b73;
+  --link-hover: #16385a;
+  --focus: #8a5a2b;
+  --error: #8b2e2e;
+  --max: 42rem;
+  --sans: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; }
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+a:hover { color: var(--link-hover); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: min(100% - 2rem, 44rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 1.25rem 0 0.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+.site-header .wrap, .site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.brand:hover { color: var(--ink); }
+.brand span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-top: 0.1rem;
+}
+nav[aria-label="Primary"] {
+  display: flex;
+  gap: 1.15rem;
+  font-size: 0.95rem;
+}
+nav[aria-label="Primary"] a { color: var(--ink); text-decoration: none; }
+nav[aria-label="Primary"] a:hover { color: var(--link); text-decoration: underline; }
+
+main { padding: 2.5rem 0 3.5rem; }
+
+.kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 0.35rem; }
+h2 { font-size: 1.6rem; margin: 0 0 0.75rem; }
+h3 { font-size: 1.15rem; margin: 1.5rem 0 0.4rem; }
+.subhead {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+.lede { font-size: 1.125rem; margin: 0 0 1.25rem; }
+p { margin: 0 0 1rem; }
+.legal-page p, .legal-page li { font-size: 1rem; }
+
+.services {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+  display: grid;
+  gap: 0.85rem;
+}
+.services li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.95rem 1.1rem;
+}
+.services strong { display: block; font-family: var(--serif); font-size: 1.1rem; margin-bottom: 0.2rem; }
+.services span { color: var(--muted); font-size: 0.98rem; }
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.5rem 1.35rem 1.6rem;
+}
+.direct-email { margin: 0 0 1.25rem; color: var(--muted); }
+
+.form-row { margin-bottom: 1rem; }
+label.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+.optional { font-weight: 400; color: var(--muted); }
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #cfc7bb;
+  border-radius: 6px;
+  padding: 0.6rem 0.7rem;
+}
+textarea { min-height: 7.5rem; resize: vertical; }
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 1.15rem 0 1.25rem;
+  padding: 0.85rem 0.9rem;
+  background: #f3efe6;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.consent input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--accent);
+}
+.consent label {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+button[type="submit"] {
+  appearance: none;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.7rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: var(--accent-hover); }
+
+.honey { position: absolute; left: -9999px; height: 0; width: 0; overflow: hidden; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--card);
+  padding: 1.5rem 0 2rem;
+  font-size: 0.875rem; /* 14px ≈ 10.5pt, above TREC's 10-point minimum */
+  line-height: 1.55;
+  color: var(--muted);
+}
+.site-footer p { margin: 0 0 0.65rem; }
+.trec-links, .legal-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 0.85rem;
+}
+.trec-links a, .legal-nav a { color: var(--link); }
+.site-footer .broker { color: var(--ink); }
+
+.thanks {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.75rem 1.4rem;
+}
+.legal-page h1 { font-size: clamp(1.7rem, 4vw, 2.2rem); margin-bottom: 0.25rem; }
+.updated { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+.legal-page ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+.legal-page li { margin-bottom: 0.4rem; }
+
+@media (max-width: 40rem) {
+  .site-header .wrap { flex-direction: column; align-items: flex-start; }
+  nav[aria-label="Primary"] { gap: 0.9rem; }
+}
